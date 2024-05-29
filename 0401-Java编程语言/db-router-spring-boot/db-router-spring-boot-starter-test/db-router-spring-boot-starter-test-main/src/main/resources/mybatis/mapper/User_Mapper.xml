@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.middleware.test.infrastructure.dao.IUserDao">
+
+    <select id="queryUserInfoByUserId" parameterType="cn.bugstack.middleware.test.infrastructure.po.User"
+            resultType="cn.bugstack.middleware.test.infrastructure.po.User">
+        SELECT id, userId, userNickName, userHead, userPassword, createTime
+        FROM user_${tbIdx}
+        where userId = #{userId}
+    </select>
+
+    <insert id="insertUser" parameterType="cn.bugstack.middleware.test.infrastructure.po.User">
+        insert into user_${tbIdx} (id, userId, userNickName, userHead, userPassword,createTime, updateTime)
+        values (#{id},#{userId},#{userNickName},#{userHead},#{userPassword},now(),now())
+    </insert>
+
+</mapper>

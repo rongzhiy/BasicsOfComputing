@@ -1,0 +1,18 @@
+management:
+  security:
+    enabled: false
+    
+server:
+  port: 8081
+  
+spring:
+  boot:
+    admin:
+      url: http://localhost:8080/admin-server
+      
+info: 
+  app:  
+    name: "demo"
+    description: "Demo project for Spring Boot"  
+    version: "0.0.1-SNAPSHOT"  
+    spring-boot-version: "1.5.9.RELEASE" 
